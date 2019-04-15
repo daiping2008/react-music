@@ -4,6 +4,10 @@ import {connect} from 'react-redux'
 
 import {actionCreator} from '../../store/recommend'
 
+import RecommendModel from '../../models/recommend'
+
+const recommendModel = new RecommendModel()
+
 class Recommend extends Component {
   constructor(){
     super()
@@ -12,9 +16,12 @@ class Recommend extends Component {
     }
   }
   render() {
-    return <div>1232{this.props.username}
+    return <div>1232{this.props.username} <i className="iconfont">&#xe6cf;</i>
         <input value={this.state.inputValue} onChange={this.bindChangeInput.bind(this)}  /><button onClick={this.bindClick.bind(this)}>提交</button>
       </div>
+  }
+  componentDidMount() {
+    recommendModel.getBanner()
   }
   bindChangeInput(e){
     this.setState({
@@ -28,7 +35,7 @@ class Recommend extends Component {
 
 const mapStateToProps = state => {
   return {
-    username: state.recommend.username
+    username: state.get('recommend').get('username')
   }
 }
 

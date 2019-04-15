@@ -1,16 +1,14 @@
+import {fromJS} from 'immutable'
 import * as actionTypes from './actionTypes'
 
-const defaultState = {
+const defaultState = fromJS({
   username:'Susan'
-}
+})
 
 export default (state = defaultState, action) => {
   switch(action.type) {
     case actionTypes.SET_USERNAME:
-      const newState = JSON.parse(JSON.stringify(state))
-      console.log(action.username)
-      newState.username = action.username
-      return newState
+      return state.set('username', action.username)
     default: return state
   }
 }
