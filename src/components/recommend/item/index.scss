@@ -1,6 +1,6 @@
 @import '../../../assets/styles/global.scss';
 
-.rec-container{
+.recommend-container{
   @include left();
   width: 100%;
   font-size:px2rem(14);
@@ -14,7 +14,7 @@
     border-radius: px2rem(2);
   }
   .content{
-    flex-grow: 1;
+    flex: 1;
     margin-left: px2rem(10);
     margin-right: px2rem(10);
     width: 0;

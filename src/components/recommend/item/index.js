@@ -6,7 +6,7 @@ class Item extends Component{
   render() {
     const {data} = this.props
     return (
-      <div className="rec-container">
+      <div className="recommend-container">
         <img src={data.picUrl} alt=""  />
         <div className="content">
           <div className="name">{data.name}</div>

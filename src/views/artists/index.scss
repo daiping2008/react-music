@@ -1,2 +1,12 @@
 @import '../../assets/styles/global.scss';
 
+.art-container{
+  .title{
+    color: $main-color;
+    font-size: px2rem(14);
+    background-color: $main-bg1;
+    margin: 0;
+    padding: px2rem(4) px2rem(10);
+    box-sizing: border-box;
+  }
+}
