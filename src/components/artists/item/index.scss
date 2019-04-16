@@ -1,0 +1,22 @@
+@import '../../../assets/styles/global.scss';
+
+.artists-continer{
+  display: flex;
+  flex-direction: row;
+  @include left();
+  padding: px2rem(10) px2rem(20);
+  box-sizing: border-box;
+  .artists-img {
+    flex: 0 0 px2rem(50);
+    width: px2rem(50);
+    height: px2rem(50);
+    border-radius: 50%;
+  }
+  .artists-name {
+    display: flex;
+    color: $main-color;
+    font-size: px2rem(14);
+    margin-left: px2rem(10);
+    align-items: center;
+  }
+}

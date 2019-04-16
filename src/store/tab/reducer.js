@@ -4,12 +4,12 @@ const defaultState = fromJS({
   tabs:[
     {
       name:'推荐',
-      path:'/recommend',
+      path:'/',
       icon:''
     },
     {
       name:'歌手',
-      path:'/singer',
+      path:'/artists',
       icon:''
     },
     {

@@ -1,8 +1,6 @@
 @import '../../assets/styles/global.scss';
 
-.recommend-container{
-  padding-top: px2rem(66);
-  box-sizing: border-box;
+.container{
   .title{
     color: $main-color-active;
     font-size: px2rem(14);

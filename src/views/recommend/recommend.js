@@ -20,7 +20,7 @@ class Recommend extends Component {
   }
   render() {
     const {banners, recommendList} = this.props
-    return <div className="recommend-container">
+    return <div className="container">
         <Head/>
         <Tab/>
         <Swiper banners={banners}/>
