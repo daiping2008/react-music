@@ -8,6 +8,7 @@ import Head from '../../components/head'
 import Tab from '../../components/tab'
 import Swiper from '../../components/swiper'
 import Item from '../../components/recommend/item'
+import Loading from '../../components/loading'
 
 import './index.scss'
 
@@ -23,12 +24,14 @@ class Recommend extends Component {
     return <div className="container rec-container">
         <Head/>
         <Tab/>
-        <Swiper banners={banners}/>
+        <div className="banners-wrapper">
+          <Swiper banners={banners}/>
+        </div>
         <h1 className="title">热门歌单推荐</h1>
         <div className="rec-content">
           {
             recommendList.length > 0 ? 
-            this.renderRecommendList() : ''
+            this.renderRecommendList() : <Loading/>
           }
         </div>
       </div>

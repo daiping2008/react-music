@@ -8,6 +8,7 @@ import Letters from '../../components/artists/letters'
 import Item from '../../components/artists/item'
 import Head from '../../components/head'
 import Tab from '../../components/tab'
+import Loading from '../../components/loading'
 
 import './index.scss'
 
@@ -32,7 +33,7 @@ class Artists extends Component{
         }
         {
           artists.length > 0 ?
-          this.renderArtists() : ''
+          this.renderArtists() : <Loading/>
         }
       </div>
     )
