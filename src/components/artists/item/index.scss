@@ -14,6 +14,7 @@
   }
   .artists-name {
     display: flex;
+    width: 0;
     color: $main-color;
     font-size: px2rem(14);
     margin-left: px2rem(10);
