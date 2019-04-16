@@ -1,1 +1,5 @@
 export const SET_USERNAME = 'SET_USERNAME'
+
+export const SET_BANNER = 'SET_BANNER'
+
+export const SET_RECOMMENDLIST = 'SET_RECOMMENDLIST'

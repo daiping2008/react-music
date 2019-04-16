@@ -8,7 +8,8 @@ class Router extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={Recommend} ></Route>
+          <Route path="/" component={Recommend} />
+          {/* <Route path="/recommend" exact component={Recommend} ></Route> */}
         </div>
       </BrowserRouter>
     )

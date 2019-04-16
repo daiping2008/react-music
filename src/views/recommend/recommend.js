@@ -4,9 +4,12 @@ import {connect} from 'react-redux'
 
 import {actionCreator} from '../../store/recommend'
 
-import RecommendModel from '../../models/recommend'
+import Head from '../../components/head'
+import Tab from '../../components/tab'
+import Swiper from '../../components/swiper'
+import Item from '../../components/recommend/item'
 
-const recommendModel = new RecommendModel()
+import './index.scss'
 
 class Recommend extends Component {
   constructor(){
@@ -16,34 +19,46 @@ class Recommend extends Component {
     }
   }
   render() {
-    return <div>1232{this.props.username} <i className="iconfont">&#xe6cf;</i>
-        <input value={this.state.inputValue} onChange={this.bindChangeInput.bind(this)}  /><button onClick={this.bindClick.bind(this)}>提交</button>
+    const {banners, recommendList} = this.props
+    return <div className="recommend-container">
+        <Head/>
+        <Tab/>
+        <Swiper banners={banners}/>
+        <h1 className="title">热门歌单推荐</h1>
+        <div className="rec-content">
+          {
+            recommendList.length > 0 ? 
+            this.renderRecommendList() : ''
+          }
+        </div>
       </div>
   }
   componentDidMount() {
-    recommendModel.getBanner()
+    this.props.getBanners()
+    this.props.getList()
   }
-  bindChangeInput(e){
-    this.setState({
-      inputValue: e.target.value
+  renderRecommendList() {
+    const {recommendList} = this.props
+    return recommendList.map((item, index) => {
+      return <Item data={item} key={index} />
     })
-  }
-  bindClick() {
-    this.props.setUsername(this.state.inputValue)
   }
 }
 
 const mapStateToProps = state => {
   return {
-    username: state.get('recommend').get('username')
+    banners: state.get('recommend').get('banners').toJS(),
+    recommendList: state.get('recommend').get('recommendList').toJS()
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUsername(username) {
-      console.log(username)
-      dispatch(actionCreator.setUsername(username))
+    getBanners() {
+      dispatch(actionCreator.getBanners())
+    },
+    getList() {
+      dispatch(actionCreator.getList())
     }
   }
 }

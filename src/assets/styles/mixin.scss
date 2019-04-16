@@ -4,3 +4,21 @@ $ration: 375 / 10;
 @function px2rem($px) {
   @return $px / $ration +rem
 }
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@mixin left {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

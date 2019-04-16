@@ -1,0 +1,21 @@
+@import '../../assets/styles/global.scss';
+
+.header-container{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1999;
+  width: 100%;
+  height: px2rem(36);
+  line-height: px2rem(36);
+  font-size: px2rem(20);
+  text-align: center;
+  background-color: $main-bg;
+  color: $main-color-active;
+  .user{
+    position: absolute;
+    right: px2rem(4);
+    top: 0;
+    font-size: px2rem(20);
+  }
+}

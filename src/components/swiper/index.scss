@@ -1,0 +1,26 @@
+@import '../../assets/styles/global.scss';
+
+.swiper-container {
+  img{
+    width: 100%;
+  }
+}
+.aws-sld{
+  --slider-height-percentage: 27%;
+}
+
+.aws-sld__bullets{
+  bottom: 0;
+  z-index: 19;
+}
+
+.aws-sld__bullets button{
+  width: 10px;
+  height: 10px;
+}
+
+.aws-sld__bullets .aws-sld__bullets--active, .aws-sld__bullets .aws-sld__bullets--active:hover{
+  transform: none;
+  -webkit-transform: none;
+  background-color: $main-color-active;
+}
