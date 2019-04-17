@@ -24,7 +24,6 @@ class SearchBar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps')
     this.setState({
       q1: nextProps.q
     })

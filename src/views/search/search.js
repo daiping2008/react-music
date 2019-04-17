@@ -7,6 +7,7 @@ import {actionCreator} from '../../store/search'
 import Head from '../../components/head'
 import Tab from '../../components/tab'
 import SearchBar from '../../components/search/searchBar'
+import Loading from '../../components/loading'
 
 
 import './index.scss'
@@ -19,9 +20,8 @@ class Search extends Component {
         <Head/>
         <Tab/>
         <SearchBar q={q}  clear={this.clear.bind(this)} bindKeyPress={this.bindKeyPress.bind(this)}/>
-        <p className='title'>热门搜索</p>
         {
-          showRes > 0 ?
+          showRes ?
           this.renderSearchRes() : this.renderKeys() 
         }
       </div>
@@ -33,20 +33,25 @@ class Search extends Component {
   }
 
   renderSearchRes() {
-    const {artists, songs} = this.props
-    return (
-      <div className='search-res'>
-        {
-          artists.length > 0 ? 
-          this.renderArtists() : ''
-        }
-        <p className='title'>单曲</p>
-        {
-          songs.length > 0 ? 
-          this.renderSongs() : ''
-        }
-      </div>
-    )
+    const {loading, artists, songs} = this.props
+
+    if (loading) {
+      return <Loading />
+    } else {
+      return (
+        <div className='search-res'>
+          {
+            artists.length > 0 ? 
+            this.renderArtists() : ''
+          }
+          <p className='title'>单曲</p>
+          {
+            songs.length > 0 ? 
+            this.renderSongs() : ''
+          }
+        </div>
+      )
+    }
   }
 
   renderSongs() {
@@ -106,6 +111,7 @@ class Search extends Component {
     const {hots, his} = this.props
     return (
       <div>
+        <p className='title'>热门搜索</p>
         <div className='tag-container'>
           {
             hots.length > 0 ? 
@@ -154,7 +160,8 @@ const mapStateToProps = state => {
     artists: state.get('search').get('artists').toJS(),
     songs: state.get('search').get('songs').toJS(),
     showRes: state.get('search').get('showRes'),
-    q: state.get('search').get('q')
+    q: state.get('search').get('q'),
+    loading: state.get('search').get('loading')
   }
 }
 

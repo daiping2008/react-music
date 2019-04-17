@@ -11,7 +11,8 @@ const defaultState = fromJS({
   mvs:[],
   order:[],
   showRes:false,
-  q:''
+  q:'',
+  loading: false
 })
 
 export default (state = defaultState, action) => {
@@ -30,7 +31,8 @@ export default (state = defaultState, action) => {
         playlists: fromJS(res.playlists),
         mvs: fromJS(res.mvs),
         order: fromJS(res.order),
-        showRes: true
+        
+        loading: false
       })
     case actionTypes.SET_CLEAR:
       return state.merge({
@@ -45,6 +47,11 @@ export default (state = defaultState, action) => {
       })
     case actionTypes.SET_Q:
       return state.set('q', action.q)
+    case actionTypes.SET_LOADING:
+      return state.merge({
+        'loading': true,
+        showRes: true
+      })
     default:
       return state
   }

@@ -7,3 +7,5 @@ export const SET_HIS = 'SET_HIS'
 export const SET_CLEAR = 'SET_CLEAR'
 
 export const SET_Q = 'SET_Q'
+
+export const SET_LOADING = 'SET_LOADING'

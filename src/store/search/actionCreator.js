@@ -27,6 +27,10 @@ export const setHots = hots => ({
   hots: fromJS(hots)
 })
 
+export const setLoading = () => ({
+  type: actionTypes.SET_LOADING
+})
+
 export const getSearchHot = () => (
   async dispatch => {
     dispatch(setHis(searchModel.getHis()))
@@ -40,10 +44,10 @@ export const getSearchSuggest = q => (
   async dispatch => {
     searchModel.setHis(q)
     dispatch(setHis(searchModel.getHis()))
-
+    dispatch(setQ(q))
+    dispatch(setLoading())
     const res = await searchModel.getSearchSuggest(q)
     dispatch(setResult(res.result))
-    dispatch(setQ(q))
   }
 )
 
