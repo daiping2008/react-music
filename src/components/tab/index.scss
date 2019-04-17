@@ -4,8 +4,9 @@
   position: fixed;
   flex-direction: row;
   @include center();
-  width: 100%;
   top: px2rem(36);
+  left: 0;
+  right: 0;
   z-index: 1999;
   line-height: px2rem(30);
   background-color: $main-bg;

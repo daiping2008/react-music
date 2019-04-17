@@ -1,0 +1,29 @@
+@import '../../../assets/styles/global.scss';
+
+.searchbar-container{
+  position: fixed;
+  top: px2rem(86);
+  left: 0;
+  right: 0;
+  height: px2rem(30);
+  line-height: px2rem(30);
+  margin: 0 px2rem(10) 0;
+  background-color: $main-bg1;
+  border-radius: px2rem(4);
+  @include center();
+  .iconfont{
+    flex: 0 0 px2rem(24);
+    font-size: px2rem(14);
+    @include center();
+  }
+  .input{
+    flex: 1;
+    margin: 0 px2rem(10);
+    border:none;
+    outline: none;
+    line-height: px2rem(30);
+    background-color: transparent;
+    font-size: px2rem(12);
+    color: $main-color;
+  }
+}

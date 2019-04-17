@@ -1,0 +1,93 @@
+@import '../../assets/styles/global.scss';
+
+.search-container{
+  padding: px2rem(116) px2rem(10) 0;
+  box-sizing: border-box;
+  .title{
+    position: relative;
+    margin: px2rem(20) 0;
+    font-size: px2rem(12);
+    font-weight: 700;
+    color: $main-color;
+  }
+  .tag-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .tag{
+      background-color: $main-bg1;
+      color: $main-color;
+      font-size: px2rem(12);
+      padding: px2rem(4) px2rem(10);
+      margin: 0 px2rem(10) px2rem(6) 0;
+      border-radius: px2rem(5);
+    }
+  }
+  .clear{
+    float: right;
+  }
+  .his-container{
+    .his-item{
+      font-size: px2rem(12);
+      color: $main-color;
+      margin-bottom: px2rem(10);
+    }
+    .del{
+      float: right;
+    }
+  }
+  .search-res{
+    .title{
+      font-size: px2rem(12);
+      color: $main-color;
+    }
+    .artists-container{
+      .artists{
+        display: flex;
+        @include center();
+        padding: px2rem(10);
+        .avator{
+          width: px2rem(40);
+          height: px2rem(40);
+          border-radius: 50%;
+          overflow: hidden;
+        }
+        .cont{
+          display: flex;
+          flex: 1;
+          align-items: center;
+          margin-left: px2rem(10);
+          font-size: px2rem(12);
+          color: $main-color;
+          .name{
+            color: $main-color-active;
+          }
+        }
+      }
+    }
+    .songs-container{
+      .songs{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: px2rem(10);
+        .song-left{
+          display: flex;
+          flex-direction: column;
+          .name{
+            font-size: px2rem(12);
+            color: $main-color;
+          }
+          .sub-name{
+            font-size: px2rem(10);
+            color: $main-color3;
+            margin-top: px2rem(5);
+          }
+        }
+        .iconfont{
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

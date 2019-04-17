@@ -11,7 +11,7 @@ class Item extends Component {
         <div className='content'>
           {
             data.tracks.slice(0, 3).map((ele, idx) => {
-              return <div className='item' key={idx}>{ele.name}</div>
+            return <div className='item' key={idx}>{idx+1} {ele.name}-{ele.ar[0].name}</div>
             })
           }
         </div>
