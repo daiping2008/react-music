@@ -23,9 +23,10 @@ class SearchBar extends Component {
     )
   }
 
-  componentDillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    console.log('componentWillReceiveProps')
     this.setState({
-      q1: this.props.q
+      q1: nextProps.q
     })
   }
 
@@ -34,7 +35,7 @@ class SearchBar extends Component {
   }
   
   bindKeyPress(e) {
-    e.keyCode === 13 && this.props.bindKeyPress(this.state.q)
+    e.keyCode === 13 && this.props.bindKeyPress(this.state.q1)
   }
 
   bindChange(e) {
