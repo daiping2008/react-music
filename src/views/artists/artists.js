@@ -20,6 +20,7 @@ class Artists extends Component{
       letterIdx:0
     }
   }
+  
   render(){
     const {artists, letters} = this.props
     const {letterIdx} = this.state
@@ -48,6 +49,7 @@ class Artists extends Component{
     
     window.addEventListener('scroll', () => {this._onScroll()}, true)
   }
+
   componentWillUnmount(){
     window.removeEventListener('scroll', function () {})
   }
@@ -130,7 +132,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getArtists() {
-        dispatch(actionCreator.getArtists())
+      dispatch(actionCreator.getArtists())
     }
   }
 }

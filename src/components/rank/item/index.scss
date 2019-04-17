@@ -1,0 +1,24 @@
+@import '../../../assets/styles/global.scss';
+
+.rank-item{
+  display: flex;
+  margin: px2rem(10) px2rem(20);
+  box-sizing: border-box;
+  background-color: $main-bg1;
+  .img{
+    width: px2rem(90);
+    height: px2rem(90);
+  }
+  .content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: px2rem(10);
+    width: 0;
+    .item{
+      font-size: px2rem(12);
+      color: $main-color;
+    }
+  }
+}
